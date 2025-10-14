@@ -10,7 +10,7 @@ def copy_firmware(source_dir, destination_dir):
 		return 0
 
 	cure_path = "binary_fpga_linux_wayland_release/target_neutral"
-	cur_files = ["rgx.fw.36.29.52.182", "rgx.sh.36.29.52.182"]
+	cur_files = ["rgx.fw.36.56.104.183", "rgx.sh.36.56.104.183"]
 
     # 复制文件
 	for file in cur_files:
@@ -175,7 +175,7 @@ def copy_bin(source_dir, destination_dir):
 
 if __name__ == "__main__":
 	# 指定源目录和目标目录
-	source_dir = 'xxx'
+	source_dir = '/home/liangbaihui/workspace_bianbu/pvr_ddkCode/userSpaceCode/umd_root/rogue/'
 
 	# 调用函数复制文件
 	copy_firmware(source_dir, "./target/lib/firmware/")
