@@ -175,7 +175,7 @@ def copy_bin(source_dir, destination_dir):
 
 if __name__ == "__main__":
 	# 指定源目录和目标目录
-	source_dir = '/home/liangbaihui/workspace_bianbu/pvr_ddkCode/userSpaceCode/umd_root/rogue/'
+	source_dir = 'xxx'
 
 	# 调用函数复制文件
 	copy_firmware(source_dir, "./target/lib/firmware/")
