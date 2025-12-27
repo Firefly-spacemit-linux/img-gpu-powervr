@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    upgrade|purge)
+        TARGET_FILE="/etc/vulkan/icd.d/powervr_icd.json"
+
+        if [ -f "$TARGET_FILE" ]; then
+            echo "Removing obsolete file: $TARGET_FILE"
+            rm -f "$TARGET_FILE"
+        fi
+
+        if [ -d "/etc/vulkan" ] && [ -z "$(ls -A /etc/vulkan)" ]; then
+            rmdir /etc/vulkan || true
+        fi
+        ;;
+    remove|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+esac
+
+exit 0
