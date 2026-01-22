@@ -1,0 +1,5 @@
+libvulkan 1 img-gpu-powervr
+libVK_IMG 1 img-gpu-powervr
+libGLESv1 1 img-gpu-powervr
+libGLESv2 2 img-gpu-powervr
+libPVROCL 1 img-gpu-powervr

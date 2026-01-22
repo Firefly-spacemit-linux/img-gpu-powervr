@@ -17,6 +17,14 @@
 override_dh_usrlocal:
 	# Do nothing
 
+override_dh_strip:
+	# Exclude firmware files from stripping, disable dbgsym for pre-compiled binaries
+	dh_strip -Xlib/firmware/ -Xusr/local/bin/
+
+override_dh_shlibdeps:
+	# Use local shlibs mappings and ignore symbol warnings for pre-compiled binaries
+	dh_shlibdeps --dpkg-shlibdeps-params=--warnings=0
+
 %:
 	dh $@
 
