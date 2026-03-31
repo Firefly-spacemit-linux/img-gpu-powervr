@@ -1,0 +1,2 @@
+target/usr/lib/*.dbg usr/lib/debug/lib/
+target/usr/local/bin/*.dbg usr/lib/debug/usr/local/bin/

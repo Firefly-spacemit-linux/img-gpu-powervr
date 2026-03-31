@@ -17,3 +17,11 @@ Depends:
  ${misc:Depends},
 Description: Imagination PowerVR GPU library packages.
  img-gpu-powervr is a GPU library packages from Imagination and provide GPU firmware, gles2, gles3. This library is not open source, only provide with binary library.
+
+Package: img-gpu-powervr-dbg
+Architecture: any
+Section: debug
+Priority: optional
+Depends: img-gpu-powervr (= ${binary:Version}), ${misc:Depends}
+Description: Debug symbols for img-gpu-powervr
+ Debug symbol files for PowerVR GPU libraries.

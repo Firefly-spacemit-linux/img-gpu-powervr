@@ -1,3 +1,7 @@
 target/lib/firmware/* lib/firmware/
-target/usr/* usr/
+target/usr/lib/*.so* usr/lib/
+target/usr/lib/*.1 usr/lib/
+target/usr/lib/*.1.* usr/lib/
+target/usr/local/* usr/local/
+target/usr/share/* usr/share/
 target/etc/* etc/

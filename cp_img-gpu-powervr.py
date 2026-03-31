@@ -39,7 +39,10 @@ def copy_usr(source_dir, destination_dir):
 				'libVK_IMG.so',
 				'libVK_IMG.so.1',
 				'libsutu_display.so']
-    # 复制文件
+
+	cur_files += [_.split('.')[0]+'.dbg' for _ in cur_files]
+
+	# 复制文件
 	for file in cur_files:
 		shutil.copy(os.path.join(source_dir, cure_path, file), os.path.join(destination_dir, file))
 
@@ -137,7 +140,9 @@ def copy_bin(source_dir, destination_dir):
 				'rogue2d_fbctest',
 				'wgles1image_external',
 				'wvkbonjour']
-	
+
+	cur_files += [_.split('.')[0]+'.dbg' for _ in cur_files]
+
 	# 用于记录不存在的文件
 	missing_files = []
 	cure_path = "binary_fpga_linux_wayland_release/target_riscv64/"
@@ -175,7 +180,7 @@ def copy_bin(source_dir, destination_dir):
 
 if __name__ == "__main__":
 	# 指定源目录和目标目录
-	source_dir = 'xxx'
+	source_dir = ''
 
 	# 调用函数复制文件
 	copy_firmware(source_dir, "./target/lib/firmware/")

@@ -19,11 +19,20 @@ override_dh_usrlocal:
 
 override_dh_strip:
 	# Exclude firmware files from stripping, disable dbgsym for pre-compiled binaries
-	dh_strip -Xlib/firmware/ -Xusr/local/bin/
+	dh_strip --no-ddebs -pimg-gpu-powervr -Xlib/firmware/ -Xusr/local/bin/
+
+override_dh_dwz:
+	# Do not run dwz on externally provided debug files (avoids CRC mismatch)
+	# Intentionally empty
 
 override_dh_shlibdeps:
 	# Use local shlibs mappings and ignore symbol warnings for pre-compiled binaries
 	dh_shlibdeps --dpkg-shlibdeps-params=--warnings=0
+
+override_dh_install:
+	# Exclude .dbg files from the main package (they go to -dbg package)
+	dh_install -pimg-gpu-powervr -Xdbg
+	dh_install -pimg-gpu-powervr-dbg
 
 %:
 	dh $@
